@@ -11,7 +11,7 @@ steps:
     - image
     - deployment
     - demoapp
-    - contacts=eu.gcr.io/$PROJECT_ID/go-demo/app:$BUILD_ID
+    - demoapp=eu.gcr.io/$PROJECT_ID/go-demo/app:$BUILD_ID
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=test-cluster' 

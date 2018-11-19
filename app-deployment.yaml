@@ -1,0 +1,37 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: demoapp
+  labels:
+    app: demoapp
+    version: 1.0.0
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demoapp
+  template: 
+    metadata: 
+      labels: 
+        app: demoapp
+    spec: 
+      containers: 
+        - name: demoapp
+          image: eu.gcr.io/kot-test-207914/go-demo/app:96ceb69a-4b2c-4813-acbf-81f8471d82c6
+          ports: 
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demoapp
+spec:
+  selector:
+    app: demoapp
+  ports:
+  - name: http-demoapp
+    protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer
+

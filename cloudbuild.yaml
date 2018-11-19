@@ -6,11 +6,11 @@ steps:
   - name: 'gcr.io/cloud-builders/kubectl'
     args:
     - -n
-    - go-demo
+    - default
     - set
     - image
     - deployment
-    - go-demo
+    - demoapp
     - contacts=eu.gcr.io/$PROJECT_ID/go-demo/app:$BUILD_ID
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-c'

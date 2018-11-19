@@ -1,0 +1,16 @@
+imports:
+- path: template-instance.jinja
+
+resources:
+- name: first-template-vm
+  type: template-instance.jinja
+  properties:
+    res-name: first-template-vm
+    zone: europe-west1-c
+    machine-type: n1-standard-1
+- name: second-template-vm
+  type: template-instance.jinja
+  properties:
+    res-name: second-template-vm
+    zone: europe-west1-c
+    machine-type: n1-standard-1
